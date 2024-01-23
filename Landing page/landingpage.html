@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="logo">ANKH</a>
+      <nav>
+        <a href="file:///C:/Users/sulya/.vscode/HTML/landingpage.html">Home</a>
+        <a href="https://www.usnews.com/news/best-countries/articles/2019-09-17/10-interesting-facts-about-egypt">Explore</a>
+        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripsinegypt.com%2Finformation-about-egypt%2F&psig=AOvVaw3w3KTHvDAyiJ0CQ9HceNU_&ust=1706023620306000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLj6wbOn8YMDFQAAAAAdAAAAABAD">About</a>
+        <a href="https://www.linkedin.com/in/harsh-sulya-8a6353249">Contact</a>
+        <a href="https://www.cia.gov/the-world-factbook/countries/egypt/">More</a>
+      </nav>
+    </header>
+    <section class="home">
+      <img src="C:\Users\sulya\.vscode\HTML\assets\bg.png" class="bg" alt="">
+      <img src="C:\Users\sulya\.vscode\HTML\assets\pyramids.png" class="pyramids" alt="">
+      <img src="C:\Users\sulya\.vscode\HTML\assets\palace.png" class="palace" alt="">
+      <div class="info">
+        <h2 class="title">Egypt</h2>
+        <p class="paragraph">Egypt is a country located in the northeastern corner of Africa and the southwestern corner of Asia. It is bordered by the Mediterranean Sea to the north, the Gaza Strip and Israel to the northeast, the Red Sea to the east, Sudan to the south, and Libya to the west. The capital and largest city of Egypt is Cairo.</p>
+        <a href="https://en.wikipedia.org/wiki/Egypt" class="btn">Learn More</a>
+      </div>
+    </section>
+    <section class="content">
+      <h2>Pyramids of Giza</h2>
+      <p>The Pyramids of Giza, located on the outskirts of Cairo, Egypt, are iconic symbols of ancient Egyptian civilization and among the most recognizable structures in the world. These architectural marvels were constructed during the Old Kingdom period, around 2580–2560 BCE, as grand tombs for pharaohs and other important figures. The three primary pyramids at Giza are the Great Pyramid of Khufu (Cheops), the Pyramid of Khafre, and the Pyramid of Menkaure.</p><br>
+      <p>The Great Pyramid of Khufu, the largest of the three, stands as a testament to the incredible engineering skills of the ancient Egyptians. Originally towering at 146.6 meters (481 feet), it held the title of the tallest man-made structure for over 3,800 years. The precision and scale of its construction, using massive limestone and granite blocks, continue to captivate historians and archaeologists. Theories abound regarding the techniques employed to transport and place these enormous stones, but many aspects of the process remain a subject of speculation.</p><br>
+      <p>Adjacent to the Great Pyramid is the Pyramid of Khafre, easily identifiable by the casing of Tura limestone at its pinnacle. The complex also features the Sphinx, a colossal limestone statue with the head of a pharaoh and the body of a lion, believed by some to represent Khafre himself. The Pyramid of Menkaure, the smallest of the three, is part of the Giza trio, and like its counterparts, it reflects the intricate architectural planning that characterized ancient Egyptian funerary practices.</p><br>
+      <p>The purpose of these pyramids extends beyond their imposing exteriors. They were designed as elaborate burial sites to house the pharaohs in the afterlife, equipped with passageways, chambers, and intricate burial rituals. The Great Pyramid, for instance, contains the King's Chamber, the Queen's Chamber, and a network of passages, including the Grand Gallery. Theories about the significance of the pyramids, their alignment with celestial bodies, and the symbolism encoded in their design have fueled fascination and debate for centuries.</p><br>
+      <p>Despite the passage of millennia, the Pyramids of Giza stand resilient, bearing witness to the ingenuity and architectural prowess of the ancient Egyptians. Their enduring mystique continues to attract millions of visitors annually, providing a tangible link to a civilization that left an indelible mark on human history.</p>
+    </section>
+    <script type="text/javascript">
+      const pyramids = document.querySelector(".pyramids");
+      const palace = document.querySelector(".palace");
+      const logo = document.querySelector(".logo");
+      const nav = document.querySelector("nav");
+      const info = document.querySelector(".info");
+  
+      //reveal elements on page loading
+      window.addEventListener("load", () => {
+        pyramids.style.transform = "translateX(0)";
+        palace.style.transform = "translateX(0)";
+        logo.style.transform = "translateY(0)";
+        nav.style.transform = "translateY(0)";
+  
+        setTimeout(() => {
+          info.style.transform = "translateY(0)";
+          info.style.opacity = "1";
+        }, 500);
+      });
+  
+      //scrolling effects on website elements
+      window.addEventListener("scroll", () => {
+        const scrollVal = window.scrollY;
+  
+        pyramids.style.left = scrollVal * -0.25 + "px";
+        palace.style.left = scrollVal * 0.25 + "px";
+        info.style.marginTop = scrollVal * 1.1 + "px";
+  
+        pyramids.style.transition = "0s";
+        palace.style.transition = "0s";
+        info.style.transition = "0s";
+      });
+  
+      //hide and display home info on scrolldown and up
+      window.onscroll = function(){
+        if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500){
+          info.style.opacity = "0";
+          info.style.transition = "0.6s";
+        }
+        else{
+          info.style.opacity = "1";
+          info.style.transition = "0.6s";
+        }
+      }
+      </script>
+        
+    
+  </body>
+</html>
+      
